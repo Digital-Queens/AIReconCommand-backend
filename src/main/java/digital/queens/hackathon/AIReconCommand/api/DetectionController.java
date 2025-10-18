@@ -1,38 +1,30 @@
 package digital.queens.hackathon.AIReconCommand.api;
 
-import digital.queens.hackathon.AIReconCommand.model.DetectionRecord;
-import digital.queens.hackathon.AIReconCommand.model.DetectionRequest;
-import digital.queens.hackathon.AIReconCommand.repository.DetectionRepository;
+import digital.queens.hackathon.AIReconCommand.model.Detection;
+import digital.queens.hackathon.AIReconCommand.model.dto.DetectionRequest;
+import digital.queens.hackathon.AIReconCommand.service.DetectionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.Instant;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api/detections")
 @RequiredArgsConstructor
 public class DetectionController {
 
-    private final DetectionRepository repository;
+    private final DetectionService detectionService;
 
     @PostMapping
     public ResponseEntity<?> receiveDetections(@RequestBody DetectionRequest request) {
-        DetectionRecord record = new DetectionRecord();
-        record.setDroneId(request.getDrone_id());
-        record.setTimestamp(Instant.parse(request.getTimestamp()));
-        record.setFrameNo(request.getFrame_no());
-        record.setTelemetry(request.getTelemetry());
-        record.setDetections(request.getDetections());
-        repository.save(record);
-        return ResponseEntity.ok(Map.of("status", "received"));
+        detectionService.saveDetection(request);
+        return ResponseEntity.ok("Detection saved successfully");
     }
 
     @GetMapping
-    public List<DetectionRecord> listAll() {
-        return repository.findAll();
+    public ResponseEntity<List<Detection>> listAll() {
+        return ResponseEntity.ok(detectionService.getAllDetections());
     }
 }
 

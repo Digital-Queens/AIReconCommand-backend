@@ -1,7 +1,10 @@
 package digital.queens.hackathon.AIReconCommand.repository;
 
-import digital.queens.hackathon.AIReconCommand.model.DetectionRecord;
-import org.springframework.data.mongodb.repository.MongoRepository;
 
+import digital.queens.hackathon.AIReconCommand.model.Detection;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface DetectionRepository extends MongoRepository<DetectionRecord, String> {}
+@Repository
+public interface DetectionRepository extends JpaRepository<Detection, Long> {}
+
