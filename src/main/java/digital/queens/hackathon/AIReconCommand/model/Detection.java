@@ -34,4 +34,8 @@ public class Detection {
     @Type(JsonType.class)
     @Column(columnDefinition = "jsonb")
     private Map<String, Object> data;
+
+    @ManyToOne
+    @JoinColumn(name = "location_id")
+    private Location location;
 }
