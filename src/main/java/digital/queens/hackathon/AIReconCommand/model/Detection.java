@@ -31,6 +31,8 @@ public class Detection {
 
     private Instant timestamp;
 
+    private DangerCategory dangerCategory;
+
     @Type(JsonType.class)
     @Column(columnDefinition = "jsonb")
     private Map<String, Object> data;
