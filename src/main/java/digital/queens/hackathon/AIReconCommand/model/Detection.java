@@ -40,4 +40,8 @@ public class Detection {
     @ManyToOne
     @JoinColumn(name = "location_id")
     private Location location;
+
+    @OneToOne
+    @JoinColumn(name = "location_id")
+    private VideoRecord record;
 }
