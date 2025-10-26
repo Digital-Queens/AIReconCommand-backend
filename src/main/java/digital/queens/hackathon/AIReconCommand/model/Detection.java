@@ -42,6 +42,6 @@ public class Detection {
     private Location location;
 
     @OneToOne
-    @JoinColumn(name = "location_id")
+    @JoinColumn(name = "record_id")
     private VideoRecord record;
 }
