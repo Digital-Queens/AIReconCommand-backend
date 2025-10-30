@@ -20,6 +20,8 @@ public class Location {
 
     private String name;
 
+    private String city;
+
     private double latitude;
 
     private double longitude;
