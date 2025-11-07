@@ -1,4 +1,4 @@
-package digital.queens.hackathon.AIReconCommand.config;
+package digital.queens.hackathon.AIReconCommand.websocket;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.socket.TextMessage;

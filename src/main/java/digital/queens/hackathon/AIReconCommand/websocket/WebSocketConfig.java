@@ -1,4 +1,4 @@
-package digital.queens.hackathon.AIReconCommand.config;
+package digital.queens.hackathon.AIReconCommand.websocket;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
