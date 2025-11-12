@@ -36,9 +36,9 @@ public class VideoStreamerService {
 
             // Load OpenCV native lib
             nu.pattern.OpenCV.loadLocally();
-            System.out.println("✅ OpenCV loaded successfully");
+            System.out.println("OpenCV loaded successfully");
         } catch (Exception e) {
-            System.err.println("❌ Failed to load OpenCV: " + e.getMessage());
+            System.err.println("Failed to load OpenCV: " + e.getMessage());
         }
     }
 
@@ -66,7 +66,7 @@ public class VideoStreamerService {
 
         VideoCapture cap = new VideoCapture(video.getFileName());
         if (!cap.isOpened()) {
-            System.err.println("❌ Cannot open video: " + video.getFileName());
+            System.err.println("Cannot open video: " + video.getFileName());
             return;
         }
 
@@ -105,7 +105,7 @@ public class VideoStreamerService {
 
         cap.release();
         frame.release();
-        System.out.println("✅ Finished " + video.getFileName());
+        System.out.println("Finished " + video.getFileName());
     }
 
     private String encodeFrame(org.opencv.core.Mat frame) {
