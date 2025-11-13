@@ -62,7 +62,7 @@ public class VideoStreamerService {
     }
 
     private void streamVideo(VideoRecord video) {
-        System.out.println("🎥 Streaming video " + video.getFileName());
+        System.out.println("Streaming video " + video.getFileName());
 
         VideoCapture cap = new VideoCapture(video.getFileName());
         if (!cap.isOpened()) {
