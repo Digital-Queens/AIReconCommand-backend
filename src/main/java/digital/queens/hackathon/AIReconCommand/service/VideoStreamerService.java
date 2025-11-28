@@ -78,7 +78,6 @@ public class VideoStreamerService {
         while (cap.read(frame)) {
             frameNo++;
 
-            // Process only every 5th frame (throttling)
             if (frameNo % 5 != 0) continue;
 
             String b64 = encodeFrame(frame);
