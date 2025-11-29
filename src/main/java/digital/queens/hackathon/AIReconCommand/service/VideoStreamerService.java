@@ -26,7 +26,6 @@ public class VideoStreamerService {
     private final VideoRecordRepository repository;
     private final SimpMessagingTemplate wsTemplate;
 
-    // Limit to 3 concurrent streams to protect GPU/CPU
     private final ExecutorService executor = Executors.newFixedThreadPool(3);
 
     static {
